@@ -1,0 +1,33 @@
+# 환경 / 비밀키
+.env
+.env.*
+!env.sample
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 벡터 인덱스 / 캐시
+*.faiss
+*.pkl
+.chroma/
+chroma_db/
+index/
+
+# 주피터
+.ipynb_checkpoints/
+
+# IDE / 에디터
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

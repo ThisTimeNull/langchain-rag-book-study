@@ -1,0 +1,30 @@
+# 핵심 LangChain (설치된 1.x 기준)
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+
+# LLM 프로바이더
+langchain-openai
+langchain-deepseek
+openai
+
+# VectorRAG: 벡터 스토어
+faiss-cpu
+langchain-chroma
+chromadb
+
+# GraphRAG: Neo4j
+langchain-neo4j
+neo4j
+
+# 문서 로더
+pypdf
+beautifulsoup4
+
+# 로컬 임베딩 (API 키 없이 실습)
+sentence-transformers
+
+# 유틸
+python-dotenv
+tiktoken
