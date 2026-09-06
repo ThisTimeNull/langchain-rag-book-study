@@ -30,7 +30,7 @@ def build_retriever():
     doc = DATA_DIR / "sample" / "company_policy.md"
     docs = TextLoader(str(doc), encoding="utf-8").load()
     # 한 줄(사실 1개)을 한 청크로 → 검색이 또렷해진다.
-    # (청크가 너무 크면 여러 사실이 섞여 엉뚱한 청크가 뽑힐 수 있다 — 학습 포인트!)
+    # (청크가 너무 크면 여러 사실이 섞여 엉뚱한 청크가 뽑힐 수 있다, 학습 포인트!)
     chunks = RecursiveCharacterTextSplitter(
         chunk_size=50, chunk_overlap=0, separators=["\n", " ", ""]
     ).split_documents(docs)
@@ -50,10 +50,10 @@ def build_retriever():
 def main():
     print(f"질문: {QUESTION}\n")
 
-    print("[A] RAG 없이 — LLM은 이 사내 정보를 학습한 적이 없어 알 수 없다.")
+    print("[A] RAG 없이, LLM은 이 사내 정보를 학습한 적이 없어 알 수 없다.")
     print("    → 모델은 모르거나, 그럴듯하게 지어낼 위험(환각)이 있다.\n")
 
-    print("[B] RAG로 — 먼저 사내 문서에서 관련 문장을 '검색'한다.")
+    print("[B] RAG로, 먼저 사내 문서에서 관련 문장을 '검색'한다.")
     retriever = build_retriever()
     hits = retriever.invoke(QUESTION)
     print(f"\n  검색된 근거 {len(hits)}개:")
@@ -75,7 +75,7 @@ def main():
     except RuntimeError:
         print("\n  (OPENAI_API_KEY 없음 → LLM 답변 생략. 검색 단계만 시연)")
 
-    print("\n결론: RAG가 없으면 모델은 사내·최신 정보를 모른다.")
+    print("\n결론: RAG가 없으면 모델은 사내, 최신 정보를 모른다.")
     print("      검색으로 근거를 먼저 제공하면 정확한 답과 출처를 얻는다.")
 
 
