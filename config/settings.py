@@ -58,6 +58,45 @@ def get_local_embeddings(model: str = "sentence-transformers/all-MiniLM-L6-v2"):
     return HuggingFaceEmbeddings(model_name=model)
 
 
+# --- Azure AI Foundry -----------------------------------------------------
+def get_azure_llm(temperature: float | None = None, deployment: str | None = None):
+    """Azure AI Foundry에 배포한 모델을 부른다.
+
+    주의: gpt-5.x 계열은 '추론(reasoning) 모델'이라 temperature를 지원하지 않는다.
+    (비추론 -chat 변형은 전부 Deprecated 상태라 신규 배포가 불가능하다)
+    그래서 temperature는 명시적으로 넘길 때만 전달한다.
+    """
+    from langchain_openai import AzureChatOpenAI
+
+    kwargs = {}
+    if temperature is not None:
+        kwargs["temperature"] = temperature
+
+    return AzureChatOpenAI(
+        azure_endpoint=_require("AZURE_OPENAI_ENDPOINT"),
+        api_key=_require("AZURE_OPENAI_API_KEY"),
+        azure_deployment=deployment or os.getenv("AZURE_OPENAI_DEPLOYMENT", "gpt-5-4-mini"),
+        api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2025-04-01-preview"),
+        **kwargs,
+    )
+
+
+def get_azure_embeddings(deployment: str | None = None):
+    """Azure AI Foundry에 배포한 임베딩 모델 (text-embedding-3-small, 1536차원).
+
+    로컬 MiniLM(384차원)보다 한국어 품질이 좋다. 단, 인덱스를 만든 모델과
+    검색할 때 모델이 같아야 하므로 모델을 바꾸면 인덱스를 새로 만들어야 한다.
+    """
+    from langchain_openai import AzureOpenAIEmbeddings
+
+    return AzureOpenAIEmbeddings(
+        azure_endpoint=_require("AZURE_OPENAI_ENDPOINT"),
+        api_key=_require("AZURE_OPENAI_API_KEY"),
+        azure_deployment=deployment or os.getenv("AZURE_EMBEDDING_DEPLOYMENT", "text-embedding-3-small"),
+        api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2025-04-01-preview"),
+    )
+
+
 # --- DeepSeek -------------------------------------------------------------
 def get_deepseek_llm(temperature: float = 0.0, model: str | None = None):
     """DeepSeek 채팅 모델. ChatDeepSeek 우선, 없으면 OpenAI 호환 엔드포인트로 폴백."""
