@@ -79,6 +79,7 @@ def ensure_log():
 
 def append_log(qid, date, question, tag, expl_name, code_name):
     code_cell = f"[코드](../code/{code_name})" if code_name else "—"
+    question = question.replace("|", "\\|")  # 표가 깨지지 않도록 이스케이프
     row = f"| {qid} | {date} | {question} | {tag} | [설명](../explanations/{expl_name}) | {code_cell} |\n"
     with open(LOGS, "a", encoding="utf-8") as f:
         f.write(row)
