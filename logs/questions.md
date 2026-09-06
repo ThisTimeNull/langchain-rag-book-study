@@ -14,3 +14,5 @@
 | Q0008 | 2026-08-27 | RAG 품질은 어떻게 튜닝하나? (chunk_size, k, 임베딩 모델을 바꿔가며 측정하기) | vectorrag | [설명](../explanations/Q0008-rag-품질은-어떻게-튜닝하나-chunk_size-k-임베딩-모델을-바꿔.md) | [코드](../code/Q0008_rag_tuning.py) |
 | Q0009 | 2026-09-05 | Cypher란 무엇이고 APOC은 뭔가? (그래프 질의 언어와 플러그인 라이브러리) | graphrag | [설명](../explanations/Q0009-cypher란-무엇이고-apoc은-뭔가-그래프-질의-언어와-플러그인-라이.md) | [코드](../code/Q0009_cypher_apoc.py) |
 | Q0010 | 2026-09-05 | GraphRAG는 VectorRAG와 무엇이 다른가? (LLM으로 문서에서 그래프를 만들고 질의하기) | graphrag | [설명](../explanations/Q0010-graphrag는-vectorrag와-무엇이-다른가-llm으로-문서에서-.md) | [코드](../code/Q0010_graphrag_pipeline.py) |
+| Q0011 | 2026-09-06 | GraphRAG가 이기는 데이터는 어떤 모양인가? (관계가 얽힌 문서로 다시 붙여보기) | graphrag | [설명](../explanations/Q0011-graphrag가-이기는-데이터는-어떤-모양인가-관계가-얽힌-문서로-다시.md) | [코드](../code/Q0011_graphrag_wins.py) |
+| Q0012 | 2026-09-06 | LLM 추출이 이득인 경우는 언제인가? (비정형 문서에서 그래프 만들기) | graphrag | [설명](../explanations/Q0012-llm-추출이-이득인-경우는-언제인가-비정형-문서에서-그래프-만들기.md) | [코드](../code/Q0012_prose_extraction.py) |
