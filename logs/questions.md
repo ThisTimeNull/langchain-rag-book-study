@@ -17,3 +17,4 @@
 | Q0011 | 2026-09-06 | GraphRAG가 이기는 데이터는 어떤 모양인가? (관계가 얽힌 문서로 다시 붙여보기) | graphrag | [설명](../explanations/Q0011-graphrag가-이기는-데이터는-어떤-모양인가-관계가-얽힌-문서로-다시.md) | [코드](../code/Q0011_graphrag_wins.py) |
 | Q0012 | 2026-09-06 | LLM 추출이 이득인 경우는 언제인가? (비정형 문서에서 그래프 만들기) | graphrag | [설명](../explanations/Q0012-llm-추출이-이득인-경우는-언제인가-비정형-문서에서-그래프-만들기.md) | [코드](../code/Q0012_prose_extraction.py) |
 | Q0013 | 2026-09-09 | 하이브리드 검색은 어떻게 하나? (벡터로 진입점을 찾고 그래프로 확장하기) | graphrag | [설명](../explanations/Q0013-하이브리드-검색은-어떻게-하나-벡터로-진입점을-찾고-그래프로-확장하기.md) | [코드](../code/Q0013_hybrid_search.py) |
+| Q0014 | 2026-09-12 | LLM이 짠 Cypher가 틀렸을 때 어떻게 고쳐서 다시 실행하나? (검증과 재시도) | graphrag | [설명](../explanations/Q0014-llm이-짠-cypher가-틀렸을-때-어떻게-고쳐서-다시-실행하나-검증과.md) | [코드](../code/Q0014_cypher_repair.py) |
