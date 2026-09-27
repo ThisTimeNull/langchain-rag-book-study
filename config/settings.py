@@ -62,9 +62,9 @@ def get_local_embeddings(model: str = "sentence-transformers/all-MiniLM-L6-v2"):
 def get_azure_llm(temperature: float | None = None, deployment: str | None = None):
     """Azure AI Foundry에 배포한 모델을 부른다.
 
-    주의: gpt-5.x 계열은 '추론(reasoning) 모델'이라 temperature를 지원하지 않는다.
-    (비추론 -chat 변형은 전부 Deprecated 상태라 신규 배포가 불가능하다)
-    그래서 temperature는 명시적으로 넘길 때만 전달한다.
+    temperature는 명시적으로 넘길 때만 전달한다. 처음엔 추론 모델이라 거부될 줄 알았는데
+    gpt-5.4-mini는 받아들이고 실제로 동작한다 (Q0018에서 확인: 0이면 6회 모두 같은 답).
+    다만 초기 o-시리즈처럼 거부하는 모델도 있으니, 기본값은 안 넘기는 쪽으로 둔다.
     """
     from langchain_openai import AzureChatOpenAI
 
