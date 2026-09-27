@@ -94,6 +94,10 @@ def get_azure_embeddings(deployment: str | None = None):
         api_key=_require("AZURE_OPENAI_API_KEY"),
         azure_deployment=deployment or os.getenv("AZURE_EMBEDDING_DEPLOYMENT", "text-embedding-3-small"),
         api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2025-04-01-preview"),
+        # Q0019에서 조각 316개를 한 번에 보내다 429(속도 제한)에 걸렸다.
+        # 한 요청에 담는 조각 수를 줄이고, 429가 나면 물러섰다 다시 보낸다.
+        chunk_size=64,
+        max_retries=6,
     )
 
 
