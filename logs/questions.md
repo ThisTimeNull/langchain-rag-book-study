@@ -21,3 +21,6 @@
 | Q0015 | 2026-09-12 | 전역 요약 질문은 왜 그래프가 이기나? (문서 전체를 세어야 답이 나오는 질문) | graphrag | [설명](../explanations/Q0015-전역-요약-질문은-왜-그래프가-이기나-문서-전체를-세어야-답이-나오는-질.md) | [코드](../code/Q0015_global_summary.py) |
 | Q0016 | 2026-09-13 | 상호참조 해결은 어떻게 하나? (대명사를 실체로 바꾸고 나서 추출하기) | graphrag | [설명](../explanations/Q0016-상호참조-해결은-어떻게-하나-대명사를-실체로-바꾸고-나서-추출하기.md) | [코드](../code/Q0016_coreference.py) |
 | Q0017 | 2026-09-13 | 규칙과 LLM을 섞어 추출하면? (규칙으로 긁고 남은 것만 LLM에 넘기기) | graphrag | [설명](../explanations/Q0017-규칙과-llm을-섞어-추출하면-규칙으로-긁고-남은-것만-llm에-넘기기.md) | [코드](../code/Q0017_hybrid_extraction.py) |
+| Q0018 | 2026-09-13 | OpenAI와 DeepSeek 모델은 어떻게 다른가? (트랜스포머, 추론 모델, 오픈 가중치) | concept | [설명](../explanations/Q0018-openai와-deepseek-모델은-어떻게-다른가-트랜스포머-추론-모델.md) | [코드](../code/Q0018_model_internals.py) |
+| Q0019 | 2026-09-13 | 진짜 PDF로 대화형 RAG를 만들면 어디서 깨지나? (논문 3편, 메모리, 출처) | vectorrag | [설명](../explanations/Q0019-진짜-pdf로-대화형-rag를-만들면-어디서-깨지나-논문-3편-메모리-출.md) | [코드](../code/Q0019_pdf_chat.py) |
+| Q0020 | 2026-09-19 | 생성 단계는 어떻게 평가하나? (정답셋, LLM 채점, 반복 실행) | vectorrag | [설명](../explanations/Q0020-생성-단계는-어떻게-평가하나-정답셋-llm-채점-반복-실행.md) | [코드](../code/Q0020_generation_eval.py) |
